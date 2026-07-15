@@ -3,332 +3,350 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Corts Research | An Independent Market Research Practice</title>
-<meta name="description" content="Corts Research is an independent market research practice in Nashville. Decision-first studies across B2B and consumer markets, outside-in brand audits, and AI discovery that keeps the brand promise intact. Built on 25 years in the field.">
+<title>Corts Research | Market research, reimagined for the AI era</title>
+<meta name="description" content="Corts Research is an independent market research practice in Nashville, built on 25 years of rigorous qualitative and quantitative research, now helping companies bring AI into their operations without touching the rigor of the work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#1A1A1A;
-    --paper:#F7F4EE;
-    --red:#D6402E;
-    --slate:#6E6A62;
-    --teal:#168A86;
-    --line:#E2DCD0;
-    --serif:Georgia,'Times New Roman',serif;
-    --sans:Helvetica,Arial,sans-serif;
+    /* Ivory stationery — warm cotton, not white */
+    --paper:#f4eeda;
+    --paper-deep:#ece4cc;
+    --paper-edge:#ded2b4;
+    /* Blues — the ink family */
+    --ink:#152743;          /* deep navy, primary text */
+    --ink-soft:#2b3f5f;
+    --royal:#26497d;        /* mid royal blue accent */
+    --royal-bright:#3568a8; /* brighter accent for links/marks */
+    --slate:#5f6f88;        /* muted body slate */
+    --line:#c9bfa4;         /* hairline on paper */
+    --gold:#9c8a5f;         /* faint engraved warmth */
   }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
   body{
-    margin:0;
-    background:var(--paper);
+    font-family:"EB Garamond",Georgia,serif;
     color:var(--ink);
-    font-family:var(--sans);
-    font-size:17px;
-    line-height:1.65;
+    background:#f0ead9; /* the "desk" — slightly deeper than the sheet */
+    line-height:1.5;
     -webkit-font-smoothing:antialiased;
   }
-  a{color:var(--red);text-decoration:none;}
-  a:hover{text-decoration:underline;}
-  .wrap{max-width:1060px;margin:0 auto;padding:0 28px;}
+  /* The "sheet" — a thick card floating on the desk */
+  .sheet{
+    max-width:1180px;
+    margin:26px auto;
+    background-color:var(--paper);
+    /* Fine cotton stationery: mottling + laid lines + coarse & fine paper fiber */
+    background-image:
+      radial-gradient(circle at 18% 12%, rgba(255,252,240,.7), transparent 42%),
+      radial-gradient(circle at 88% 82%, rgba(150,132,88,.20), transparent 55%),
+      radial-gradient(circle at 60% 40%, rgba(150,132,88,.10), transparent 45%),
+      repeating-linear-gradient(0deg, rgba(110,94,58,.06) 0 1px, transparent 1px 4px),
+      repeating-linear-gradient(90deg, rgba(110,94,58,.04) 0 1px, transparent 1px 24px),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.35' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23c)' opacity='0.09'/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23f)' opacity='0.06'/%3E%3C/svg%3E");
+    background-blend-mode:screen, multiply, multiply, normal, normal, multiply, multiply;
+    border:1px solid var(--paper-edge);
+    border-radius:3px;
+    box-shadow:
+      0 1px 0 #fffefa inset,
+      0 0 60px rgba(160,140,90,.10) inset,
+      0 2px 4px rgba(21,39,67,.05),
+      0 20px 55px rgba(21,39,67,.13),
+      0 44px 90px rgba(21,39,67,.10);
+    position:relative;
+    overflow:hidden;
+  }
+  /* embossed inner keyline, like the plate mark on engraved stock */
+  .sheet::after{
+    content:"";position:absolute;inset:14px;border:1px solid rgba(120,104,66,.14);
+    border-radius:2px;pointer-events:none;
+    box-shadow:0 0 0 1px rgba(255,255,255,.4) inset;
+  }
+  /* deckled top edge accent */
+  .sheet::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:4px;
+    background:linear-gradient(90deg,var(--royal),var(--royal-bright) 55%,var(--gold));
+    opacity:.85;
+  }
+  .wrap{padding:0 clamp(28px,6vw,84px)}
 
-  /* Header */
-  header{
-    position:sticky;top:0;z-index:20;
-    background:rgba(247,244,238,0.92);
-    backdrop-filter:blur(6px);
+  /* ---------- NAV ---------- */
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:26px clamp(28px,6vw,84px) 20px;
     border-bottom:1px solid var(--line);
   }
-  .bar{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1060px;margin:0 auto;}
-  .brand{display:flex;flex-direction:column;line-height:1;}
-  .brand .mark{font-family:var(--serif);font-size:24px;letter-spacing:.2px;}
-  .brand .mark b{font-weight:normal;color:var(--ink);}
-  .brand .mark span{color:var(--slate);}
-  .brand .rule{position:relative;height:3px;background:var(--ink);width:186px;margin-top:6px;}
-  .brand .rule::after{content:"";position:absolute;right:-2px;top:-4px;width:11px;height:11px;background:var(--red);}
-  nav a{color:var(--ink);font-size:14px;letter-spacing:.3px;margin-left:26px;}
-  nav a:hover{color:var(--red);text-decoration:none;}
-  .navlinks{display:flex;align-items:center;}
-  @media(max-width:720px){.navlinks{display:none;}}
+  .brand{display:flex;align-items:center;gap:12px}
+  /* engraved crest, primary mark */
+  .navcrest{
+    width:40px;height:40px;flex:0 0 40px;border:1.5px solid var(--royal);border-radius:3px;
+    display:flex;align-items:center;justify-content:center;position:relative;
+    font-family:"Cormorant Garamond",serif;font-size:18px;color:var(--royal);letter-spacing:.04em;
+    background:radial-gradient(circle at 35% 30%, #fffdf6, var(--paper-deep));
+  }
+  .navcrest::before,.navcrest::after{content:"";position:absolute;left:6px;right:6px;height:1px;background:var(--line)}
+  .navcrest::before{top:6px}.navcrest::after{bottom:6px}
+  .wordmark{font-family:"Cormorant Garamond",serif;font-size:21px;letter-spacing:.22em;color:var(--ink);text-transform:uppercase;line-height:1}
+  .navlinks{display:flex;gap:30px;font-family:"Inter",sans-serif;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+  .navlinks a{color:var(--ink-soft);text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent;transition:.2s}
+  .navlinks a:hover{color:var(--royal);border-color:var(--royal)}
+  @media(max-width:760px){.navlinks{display:none}}
 
-  /* Hero */
-  .hero{padding:86px 0 64px;}
-  .hero .kicker{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--slate);margin-bottom:22px;}
+  /* ---------- HERO ---------- */
+  .hero{padding:76px 0 64px;text-align:center;position:relative}
+  .eyebrow{
+    font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.34em;text-transform:uppercase;
+    color:var(--royal);margin-bottom:26px;
+  }
+  .eyebrow span{margin:0 12px;color:var(--gold)}
   .hero h1{
-    font-family:var(--serif);
-    font-weight:normal;
-    font-size:46px;
-    line-height:1.18;
-    margin:0 0 26px;
-    max-width:24ch;
+    font-family:"Cormorant Garamond",serif;font-weight:500;
+    font-size:clamp(40px,6.4vw,74px);line-height:1.04;letter-spacing:-.01em;
+    color:var(--ink);max-width:17ch;margin:0 auto 26px;
   }
-  .accent{position:relative;white-space:nowrap;}
-  .accent::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:8px;background:rgba(214,64,46,0.22);z-index:-1;}
-  .hero p.lead{font-size:20px;max-width:56ch;color:#33312d;margin:0 0 24px;}
-  .hero p.sub{max-width:62ch;color:#33312d;margin:0 0 34px;}
-  .cta{display:inline-block;background:var(--ink);color:var(--paper);padding:14px 26px;font-size:15px;letter-spacing:.4px;border:1px solid var(--ink);}
-  .cta:hover{background:var(--red);border-color:var(--red);text-decoration:none;}
-  .cta.ghost{background:transparent;color:var(--ink);margin-left:12px;}
-  .cta.ghost:hover{background:var(--ink);color:var(--paper);}
-
-  /* Section shell */
-  section{padding:66px 0;border-top:1px solid var(--line);}
-  .eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin:0 0 14px;}
-  h2{font-family:var(--serif);font-weight:normal;font-size:32px;line-height:1.2;margin:0 0 26px;}
-  h3{font-family:var(--serif);font-weight:normal;font-size:21px;margin:0 0 10px;}
-
-  /* Who we are */
-  .about-grid{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start;}
-  .photo{position:relative;width:280px;height:320px;background:#ECE6DA;border:1px solid var(--line);overflow:hidden;}
-  .photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
-  .photo.noimg::after{
-    content:"HC";
-    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    font-family:var(--serif);font-size:64px;color:var(--slate);letter-spacing:2px;
+  .hero p{
+    font-size:clamp(17px,2vw,20px);color:var(--slate);max-width:60ch;margin:0 auto 38px;line-height:1.62;
   }
-  .photo .cap{position:absolute;left:0;bottom:0;right:0;background:rgba(26,26,26,0.82);color:var(--paper);font-size:12px;letter-spacing:.4px;padding:8px 12px;}
-  .about-grid p{margin:0 0 18px;}
-  @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:28px;}.photo{width:100%;max-width:320px;height:360px;}}
+  .cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;font-family:"Inter",sans-serif}
+  .btn{
+    font-size:13px;letter-spacing:.05em;text-decoration:none;padding:14px 30px;border-radius:2px;transition:.2s;
+  }
+  .btn-primary{background:var(--royal);color:#f7f2e5;box-shadow:0 6px 16px rgba(38,73,125,.28)}
+  .btn-primary:hover{background:var(--ink)}
+  .btn-ghost{color:var(--ink);border:1px solid var(--royal)}
+  .btn-ghost:hover{background:rgba(38,73,125,.07)}
+  .rule{width:52px;height:1px;background:var(--line);margin:56px auto 0;position:relative}
+  .rule::after{content:"";position:absolute;top:-3px;left:50%;transform:translateX(-50%);width:7px;height:7px;border-radius:50%;background:var(--royal-bright)}
 
-  /* Approach */
-  .cards{display:grid;grid-template-columns:1fr;gap:26px;max-width:760px;}
-  .card{border-left:3px solid var(--red);padding:4px 0 4px 20px;}
-  .card p{margin:8px 0 0;color:#33312d;}
+  /* ---------- SECTIONS ---------- */
+  section{padding:66px 0;border-top:1px solid var(--line)}
+  .sec-label{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--royal);margin-bottom:18px}
+  .sec-h{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(28px,3.6vw,44px);line-height:1.1;color:var(--ink);margin-bottom:18px;max-width:20ch}
+  .sec-lead{font-size:18px;color:var(--slate);max-width:62ch;line-height:1.6}
+  .caps-intro{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;color:var(--ink-soft);margin-top:30px}
+  #expertise .sec-lead{max-width:none}
 
-  /* Expertise */
-  .tags{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 32px;max-width:900px;}
-  .tags span{font-size:15px;color:#33312d;}
-  .tags span::before{content:"";display:inline-block;width:7px;height:7px;background:var(--red);margin-right:11px;}
-  @media(max-width:760px){.tags{grid-template-columns:1fr 1fr;}}
-  @media(max-width:520px){.tags{grid-template-columns:1fr;}}
+  /* expertise — typeset capabilities list, not buttons */
+  .caps{
+    margin-top:20px;column-gap:56px;column-count:3;
+    border-top:1px solid var(--line);
+    padding:26px 0 0;
+  }
+  @media(max-width:820px){.caps{column-count:2;column-gap:32px}}
+  @media(max-width:520px){.caps{column-count:1}}
+  .caps .item{
+    font-family:"EB Garamond",serif;font-size:17px;color:var(--ink-soft);
+    padding:7px 0 7px 20px;position:relative;break-inside:avoid;
+    border-bottom:1px dotted rgba(120,104,66,.28);
+  }
+  .caps .item:last-child{border-bottom:none}
+  .caps a.item-link{display:block;text-decoration:none;color:var(--royal);font-style:italic}
+  .caps a.item-link::before{opacity:1;background:var(--royal)}
+  .caps a.item-link:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+  .caps .item::before{
+    content:"";position:absolute;left:2px;top:15px;width:5px;height:5px;
+    border-radius:50%;background:var(--royal-bright);opacity:.7;
+  }
 
-  /* AI Discovery */
-  .ai{background:var(--ink);color:var(--paper);border-top:none;}
-  .ai .eyebrow{color:#ffb3a8;}
-  .ai h2{color:var(--paper);}
-  .ai .lead{font-size:19px;max-width:60ch;color:#e8e3d8;}
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin:36px 0 26px;}
-  @media(max-width:900px){.steps{grid-template-columns:1fr 1fr;}}
-  .step{border-top:2px solid var(--red);padding-top:16px;}
-  .step .n{font-family:var(--serif);font-size:14px;color:#ffb3a8;letter-spacing:1px;}
-  .step h3{color:var(--paper);margin:6px 0 8px;}
-  .step p{color:#cfcabd;font-size:15px;margin:0;}
-  .lenses{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:36px 0 8px;}
-  .lens{border-left:3px solid var(--teal);padding:4px 0 4px 20px;}
-  .lens h3{color:var(--paper);margin:0 0 8px;}
-  .lens p{color:#cfcabd;font-size:15px;margin:0;}
-  @media(max-width:760px){.lenses{grid-template-columns:1fr;}}
-  .fourlens{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:20px 0 34px;}
-  .fourlens .fl{background:rgba(247,244,238,0.06);border:1px solid rgba(247,244,238,0.18);padding:16px;}
-  .fourlens .fl h4{font-family:var(--serif);font-weight:normal;font-size:17px;color:var(--paper);margin:0 0 6px;}
-  .fourlens .fl p{color:#cfcabd;font-size:14px;margin:0;}
-  @media(max-width:760px){.fourlens{grid-template-columns:1fr 1fr;}}
-  @media(max-width:520px){.fourlens{grid-template-columns:1fr;}}
-  .rule-line{font-family:var(--serif);font-size:22px;color:var(--paper);margin:0 0 34px;}
-  .rule-line em{color:#ffb3a8;font-style:normal;}
-  .ai .elevate{font-size:18px;color:#f3efe4;margin:0 0 14px;}
-  .ai .elevate strong{color:#fff;}
-  .ai .foot{color:#a7a294;font-size:15px;font-style:italic;}
-  @media(max-width:760px){.steps{grid-template-columns:1fr;}}
+  /* pull quote */
+  .quote{text-align:center;padding:70px clamp(20px,6vw,120px)}
+  .quote p{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:clamp(24px,3.4vw,38px);line-height:1.28;color:var(--ink)}
+  .quote em{color:var(--royal);font-style:italic}
+  .quote-inset{padding:34px 0 6px;border-top:1px solid var(--line);margin-top:36px}
+  .quote-inset p{font-size:clamp(22px,3vw,32px)}
 
-  /* Contact */
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
-  .contact a.big{font-family:var(--serif);font-size:22px;color:var(--ink);}
-  .contact a.big:hover{color:var(--red);}
-  .contact .row{margin:0 0 16px;}
-  .contact .label{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--slate);display:block;margin-bottom:2px;}
-  @media(max-width:680px){.contact-grid{grid-template-columns:1fr;gap:24px;}}
+  /* AI Discovery — intro with figure */
+  .ai-intro{display:grid;grid-template-columns:1fr 250px;gap:52px;align-items:center}
+  @media(max-width:820px){.ai-intro{grid-template-columns:1fr;gap:20px}.ai-figure{max-width:230px;margin:0 auto}}
+  .ai-figure svg{width:100%;height:auto;display:block}
+  /* AI Discovery — two lenses */
+  .lenses{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:40px}
+  @media(max-width:820px){.lenses{grid-template-columns:1fr;gap:28px}}
+  .lens{background:var(--paper-deep);border:1px solid var(--paper-edge);border-radius:3px;padding:30px 30px 32px;box-shadow:0 8px 22px rgba(21,39,67,.07)}
+  .lens .k{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--royal)}
+  .lens h3{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:26px;color:var(--ink);margin:8px 0 14px}
+  .lens p{font-size:16.5px;color:var(--slate);line-height:1.62}
+  .closing{margin-top:52px;text-align:center;font-family:"Cormorant Garamond",serif;font-size:clamp(20px,2.6vw,27px);font-style:italic;line-height:1.34;color:var(--ink-soft);max-width:46ch;margin-left:auto;margin-right:auto}
 
-  /* Footer */
-  footer{border-top:1px solid var(--line);padding:40px 0 56px;}
-  .foot-mark{font-family:var(--serif);font-size:20px;}
-  .foot-mark span{color:var(--slate);}
-  .foot-rule{position:relative;height:2px;background:var(--ink);width:150px;margin:8px 0 16px;}
-  .foot-rule::after{content:"";position:absolute;right:-2px;top:-3px;width:8px;height:8px;background:var(--red);}
-  footer .meta{font-size:13px;color:var(--slate);line-height:1.8;}
+  /* who / contact */
+  .who-row{display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:start;margin-top:22px}
+  @media(max-width:820px){.who-row{grid-template-columns:1fr;gap:24px;justify-items:start}}
+  .who-text .sec-lead{margin-top:18px}
+  .portrait{
+    width:200px;aspect-ratio:4/5;border-radius:3px;overflow:hidden;
+    border:1px solid var(--paper-edge);
+    box-shadow:0 10px 26px rgba(21,39,67,.12);
+  }
+  .portrait img{width:100%;height:100%;object-fit:cover;display:block}
+  .portrait-cap{margin-top:12px;font-family:"Inter",sans-serif;font-size:12px;color:var(--ink-soft);letter-spacing:.04em}
+  .portrait-cap b{display:block;font-family:"Cormorant Garamond",serif;font-size:19px;color:var(--ink);letter-spacing:.02em;font-weight:600}
+
+  .contact{border-top:1px solid var(--line)}
+  .contact .row{display:flex;flex-wrap:wrap;gap:40px;margin-top:26px;font-family:"Inter",sans-serif;font-size:14px}
+  .contact .row div{min-width:150px}
+  .contact .row span{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--royal);margin-bottom:6px}
+  .contact .row a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+  .contact .row a:hover{color:var(--royal);border-color:var(--royal)}
+
+  footer{border-top:1px solid var(--line);padding:30px clamp(28px,6vw,84px);
+    font-family:"Inter",sans-serif;font-size:12px;color:var(--slate);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="bar">
+<div class="sheet">
+
+  <nav>
     <div class="brand">
-      <div class="mark"><b>Corts</b> <span>Research</span></div>
-      <div class="rule"></div>
+      <div class="navcrest">CR</div>
+      <div class="wordmark">Corts Research</div>
     </div>
     <div class="navlinks">
-      <nav>
-        <a href="#expertise">Expertise</a>
-        <a href="#approach">Approach</a>
-        <a href="#ai">AI Discovery</a>
-        <a href="#who">Who We Are</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <a href="#expertise">What We Do</a>
+      <a href="#ai">AI Discovery</a>
+      <a href="#who">Who We Are</a>
+      <a href="#contact">Contact</a>
     </div>
-  </div>
-</header>
+  </nav>
 
-<main>
   <div class="wrap">
-    <section class="hero" style="border-top:none;">
-      <p class="kicker">Trusted &middot; Experienced &middot; Unbiased</p>
-      <h1>A full-service <span class="accent">market research</span> practice.</h1>
-      <p class="lead">Companies come to us when the next decision is too big to guess, and to keep a steady read on their market: their customers, what resonates, and where they stand against the competition. Twenty-five years of primary qualitative and quantitative research gets you the evidence.</p>
-      <div>
-        <a class="cta" href="#contact">Start a conversation</a>
-        <a class="cta ghost" href="#ai">Explore AI Discovery</a>
+    <!-- HERO -->
+    <header class="hero">
+      <div class="eyebrow">Trusted <span>·</span> Experienced <span>·</span> Unbiased</div>
+      <h1>Market research, reimagined for the&nbsp;AI&nbsp;era.</h1>
+      <p>Corts Research is built on twenty-five years of market research experience, reimagined from the ground up. We've mapped our workflows, identified and tested options to apply AI, built and tested AI tools, without touching anything that may reduce our research rigor. The study design, sample, partnership, and judgment stay human. In addition to the more standard methodologies, we now offer AI Discovery, the research discipline turned toward helping your company become an AI-first business that grows faster and costs less to run.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#contact">Start a conversation</a>
+        <a class="btn btn-ghost" href="#ai">Explore AI Discovery</a>
       </div>
-    </section>
-  </div>
+      <div class="rule"></div>
+    </header>
 
-  <div class="wrap">
+    <!-- WHAT WE DO -->
     <section id="expertise">
-      <p class="eyebrow">Expertise</p>
-      <h2>A full mixed-methods stack.</h2>
-      <p style="max-width:60ch;margin:-8px 0 26px;color:#33312d;">B2B and consumer research, from in-depth qualitative through advanced analytics.</p>
-      <div class="tags">
-        <span>Consumer &amp; Shopper Insights</span>
-        <span>Brand Architecture &amp; Positioning</span>
-        <span>Brand Equity Measurement</span>
-        <span>Tracking Studies</span>
-        <span>Brand Consistency Audits</span>
-        <span>Segmentation</span>
-        <span>Market Sizing</span>
-        <span>Portfolio Optimization</span>
-        <span>Innovation Research</span>
-        <span>Concept &amp; Product Testing</span>
-        <span>Usability Testing</span>
-        <span>Path-to-Purchase</span>
-        <span>eCommerce &amp; Digital Shelf</span>
-        <span>Conjoint</span>
-        <span>MaxDiff</span>
-        <span>Pricing Research</span>
-        <span>Message &amp; Claims Testing</span>
+      <div class="sec-label">What we do</div>
+      <h2 class="sec-h">Research designed for your business.</h2>
+      <p class="sec-lead">Clients rarely arrive with a research brief. They arrive with a business question. We start with your question and constraints: budgets and timelines are real, and we design the study to them. Then we align on the market we need to study to answer it. We hold strong relationships with sample partners across consumer and B2B, and we believe in soft-launches, verifying the data, and multi-day fielding to make sure we are reaching real people, not bots or professional respondents. This is not the place to skimp, and neither is the analysis, which draws on experience across industries and brand sizes.</p>
+      <p class="sec-lead" style="margin-top:20px">We read the results the way the market really works, in the context of your market share, because what looks like a strong or weak number depends on how big the brand already is in its category. The answer comes back in the form your audience needs: an executive presentation, a technical readout, or an interactive report your team keeps using after we leave.</p>
+      <p class="caps-intro">A full mixed-methods stack: B2B and consumer research, from in-depth qualitative through advanced analytics.</p>
+      <div class="caps">
+        <div class="item">Consumer &amp; Shopper Insights</div>
+        <div class="item">Brand Architecture &amp; Positioning</div>
+        <div class="item">Brand Equity Measurement</div>
+        <div class="item">Tracking Studies</div>
+        <div class="item">Brand Consistency Audits</div>
+        <div class="item">Segmentation</div>
+        <div class="item">Market Sizing</div>
+        <div class="item">Portfolio Optimization</div>
+        <div class="item">Innovation Research</div>
+        <div class="item">Concept &amp; Product Testing</div>
+        <div class="item">Usability Testing</div>
+        <div class="item">Path-to-Purchase</div>
+        <div class="item">eCommerce &amp; Digital Shelf</div>
+        <div class="item">Conjoint</div>
+        <div class="item">MaxDiff</div>
+        <div class="item">Pricing Research</div>
+        <div class="item">Message &amp; Claims Testing</div>
+        <a class="item item-link" href="#ai">AI Discovery</a>
       </div>
-
     </section>
+
   </div>
 
+  <!-- AI DISCOVERY -->
   <div class="wrap">
-    <section id="approach">
-      <p class="eyebrow">How we work</p>
-      <h2>From problem to method.</h2>
-      <p style="max-width:62ch;margin:-8px 0 32px;color:#33312d;">The interviewing, analysis, and judgment are the same craft whatever we point them at: brand positioning, segmentation, pricing, innovation, customer understanding, and lately, AI discovery. Whatever the question, the way we work stays the same.</p>
-      <div class="cards">
-        <div class="card">
-          <h3>Start with the problem</h3>
-          <p>Clients rarely arrive with a research brief. They arrive with a problem or a decision they need to make. Our first job is collaborating to understand the business question and any constraints. Only then do we discuss approaches, because budgets and timelines are real, and we design to them as carefully as we design the study.</p>
+    <section id="ai">
+      <div class="ai-intro">
+        <div class="ai-intro-text">
+          <div class="sec-label">AI Discovery</div>
+          <h2 class="sec-h">Before AI can elevate your business, build the foundation.</h2>
+          <p class="sec-lead">AI Discovery is the newest use of our oldest skill. Most organizations know they should be using AI but have no credible way to choose where or how. The hard part was never the technology. It is discovery. Before choosing tools or building workflows, a company needs to extract the knowledge about its brand promise and processes for AI to use. Most of that lives in people's heads, and getting it out faithfully is what research does. The aim is practical: the automations that accelerate revenue or lower cost, without touching what makes the brand work. We have already done this inside our own practice, on processes that do not affect the rigor of the market research itself, only its speed and cost, and we can do it in yours.</p>
+          <p class="sec-lead">The real prize is bigger than a faster version of what you do now: becoming a company that runs on AI. The firms best placed to do that are the ones that already work, with processes and judgment worth encoding, and the hard part is teaching AI what good looks like in your business, which is a research problem before it is an engineering one.</p>
         </div>
-        <div class="card">
-          <h3>Research the right market</h3>
-          <p>Answering the question starts with determining who we need to research to answer it, then making sure we are really reaching those people. Bots and professional respondents have made that second part a craft of its own. Our field partners and quality checks carry that weight.</p>
-        </div>
-        <div class="card">
-          <h3>Customized deliverables</h3>
-          <p>The deliverable is customized to your needs and audience, whether that is an executive presentation, a technical readout, a working session, or an interactive report or market simulator your team keeps using after we leave.</p>
+        <div class="ai-figure" aria-hidden="true">
+          <svg viewBox="0 0 260 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- rising structure, tapering tower on a foundation -->
+            <circle cx="130" cy="60" r="4.5" fill="#26497d" stroke="none"/>
+            <line x1="130" y1="66" x2="130" y2="86" stroke="#26497d" stroke-width="1.5"/>
+            <rect x="108" y="86" width="44" height="26" stroke="#152743" stroke-width="1.5"/>
+            <rect x="86" y="112" width="88" height="30" stroke="#152743" stroke-width="1.5"/>
+            <line x1="130" y1="112" x2="130" y2="142" stroke="#152743" stroke-width="1"/>
+            <rect x="64" y="142" width="132" height="34" stroke="#152743" stroke-width="1.5"/>
+            <line x1="108" y1="142" x2="108" y2="176" stroke="#152743" stroke-width="1"/>
+            <line x1="152" y1="142" x2="152" y2="176" stroke="#152743" stroke-width="1"/>
+            <rect x="42" y="176" width="176" height="38" stroke="#152743" stroke-width="1.5"/>
+            <line x1="86" y1="176" x2="86" y2="214" stroke="#152743" stroke-width="1"/>
+            <line x1="130" y1="176" x2="130" y2="214" stroke="#152743" stroke-width="1"/>
+            <line x1="174" y1="176" x2="174" y2="214" stroke="#152743" stroke-width="1"/>
+            <rect x="24" y="214" width="212" height="26" stroke="#26497d" stroke-width="2"/>
+            <line x1="24" y1="227" x2="236" y2="227" stroke="#c9bfa4" stroke-width="1"/>
+            <line x1="52" y1="240" x2="52" y2="256" stroke="#8a7a52" stroke-width="1.25"/>
+            <line x1="94" y1="240" x2="94" y2="256" stroke="#8a7a52" stroke-width="1.25"/>
+            <line x1="130" y1="240" x2="130" y2="258" stroke="#8a7a52" stroke-width="1.25"/>
+            <line x1="166" y1="240" x2="166" y2="256" stroke="#8a7a52" stroke-width="1.25"/>
+            <line x1="208" y1="240" x2="208" y2="256" stroke="#8a7a52" stroke-width="1.25"/>
+            <line x1="14" y1="240" x2="246" y2="240" stroke="#152743" stroke-width="1.5"/>
+          </svg>
         </div>
       </div>
-    </section>
-  </div>
 
-  <section class="ai" id="ai">
-    <div class="wrap">
-      <p class="eyebrow">AI Discovery</p>
-      <h2>Before AI can elevate your business, build the foundation.</h2>
-      <p class="lead">AI Discovery is the newest use of our oldest skill. Most organizations know they should be using AI but have no credible way to choose where or how. The hard part was never the technology. It is discovery.</p>
-      <p class="lead">Before choosing tools or building workflows, a company needs to extract the knowledge about its brand promise and processes for AI to use. Most of that lives in people's heads, and getting it out faithfully is what research does.</p>
+      <p class="closing">The companies that win with AI will not have the best models. They will have the best-organized understanding of their own work – and that is research.</p>
 
       <div class="lenses">
         <div class="lens">
-          <h3>The inside lens: the work</h3>
-          <p>Process docs and self-reports are stories people tell about their own habits. The real workflow, where the hours and friction go, has to be discovered. We map what is actually done, by whom, how, and when; and which parts people would be glad to hand off. Automation only counts as a win when the reclaimed hours move to judgment, relationships, and creativity.</p>
+          <div class="k">The inside lens · the work</div>
+          <h3>Map the workflows</h3>
+          <p>Every engagement begins where you are: what you have tried with AI, and which parts of the business make the most sense to explore first. We map the workflows, tools, and knowledge with your teams, learning where the time, friction, and rework go, and which tasks employees would be glad to automate, flagging the data each task needs so any build starts with known requirements. We weigh each opportunity on impact, feasibility, and human fit, and decide together what to prioritize. Automation only counts as a win when the reclaimed hours move to judgment, relationships, and creativity.</p>
         </div>
         <div class="lens">
-          <h3>The outside lens: the customer</h3>
-          <p>Customers judge a brand in seconds, on feeling, before any reasoning happens. When someone wants a human and gets a phone tree or a chatbot, the brand pays for it at that gut level, and no argument about efficiency wins them back. So every automation that touches the customer gets tested against the brand promise before it gets built.</p>
+          <div class="k">The outside lens · the customer</div>
+          <h3>Tested against the brand promise</h3>
+          <p>Customers judge a brand in seconds, on feeling, before any reasoning happens. When someone wants a human and gets a phone tree or a chatbot, the brand pays for it at that gut level, and no argument about efficiency wins them back. So every automation that touches the customer is weighed on brand fit and tested against the brand promise before it gets built. The result is an executive-ready roadmap: what each option requires, how we will define what good looks like, and how to sequence it. When you're ready, we help you pilot one and measure the real before-and-after.</p>
         </div>
       </div>
 
-      <p class="rule-line">Hours saved at the brand's expense are <em>borrowed, not earned.</em></p>
-
-      <div class="steps">
-        <div class="step">
-          <div class="n">01</div>
-          <h3>Start where you are</h3>
-          <p>Every engagement begins with the client: where you are with AI today, what has been tried, and which areas of the business make the most sense to explore first.</p>
-        </div>
-        <div class="step">
-          <div class="n">02</div>
-          <h3>Discover</h3>
-          <p>We'll map the workflows, tools, and knowledge by collaborating with your teams to learn where the time, friction, and rework go, and importantly what the team would be glad to automate. Along the way, we'll also flag the data and tools each task involves, so any build starts with known-requirements.</p>
-        </div>
-        <div class="step">
-          <div class="n">03</div>
-          <h3>Prioritize</h3>
-          <p>We'll evaluate tasks and workflows (never people) through several different lenses, including impact, feasibility, human fit, and brand fit, and collaborate with you to determine which tasks to prioritize for AI development.</p>
-        </div>
-        <div class="step">
-          <div class="n">04</div>
-          <h3>Roadmap</h3>
-          <p>An executive-ready plan defining your options to automate: what each would require, the expected return, and how they could be sequenced. When you are ready, we can help you pilot a single automation and measure the return with real before-and-after numbers.</p>
-        </div>
+      <div class="quote quote-inset">
+        <p>Hours saved at the brand's expense are <em>borrowed, not earned.</em></p>
       </div>
-      <p class="elevate">The right automation takes the repetitive, low-value work off your team so their time goes where judgment, relationships, and creativity matter most. That is what makes adoption stick, and it is what keeps the brand promise intact.</p>
-      <p class="foot">The companies that win with AI will not have the best models. They will have the best-organized understanding of their own work, and that is research.</p>
-    </div>
-  </section>
+
+    </section>
+  </div>
 
   <div class="wrap">
+    <!-- WHO -->
     <section id="who">
-      <p class="eyebrow">Who we are</p>
-      <div class="about-grid">
-        <div class="photo" id="photo">
-          <img src="heather.jpg" alt="Heather Corts" onerror="document.getElementById('photo').classList.add('noimg'); this.remove();">
-          <div class="cap">Heather Corts, Founder</div>
-        </div>
+      <div class="sec-label">Who we are</div>
+      <div class="who-row">
         <div>
-          <h2>An independent practice, built on 25 years in the field.</h2>
-          <p>Corts Research was founded by Heather Corts. Over 25 years she has designed and led custom qualitative and quantitative studies, across both B2B and consumer markets, for brands from CPG to healthcare to apparel to consumer technology.</p>
-          <p>Behind every study sits a conviction borrowed from behavioral science. Most decisions are made fast, on intuition and feeling; the reasons people give come later, and they are stories. The gap between the two is why research exists, and why we design studies that catch how people decide rather than how they say they decide.</p>
-          <p>We maintain strong relationships with field partners for consumer and professional respondents worldwide, and do our best work where the research drives a tangible business impact. Corts Research, L.L.C. is based in Nashville, Tennessee.</p>
+          <div class="portrait"><img src="heather.jpg" alt="Heather Corts, Founder of Corts Research"></div>
+          <div class="portrait-cap"><b>Heather Corts</b>Founder</div>
         </div>
+        <div class="who-text">
+          <h2 class="sec-h">An independent practice, built on 25 years in the field.</h2>
+          <p class="sec-lead">Over 25 years, Heather Corts has designed and led custom qualitative and quantitative studies across B2B and consumer markets, from CPG to healthcare to apparel to consumer technology. Corts Research, L.L.C. is based in Nashville, Tennessee.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="sec-label">Contact</div>
+      <h2 class="sec-h">What decision are you facing?</h2>
+      <div class="row">
+        <div><span>Email</span><a href="mailto:heather@cortsresearch.com">heather@cortsresearch.com</a></div>
+        <div><span>Phone</span><a href="tel:+16154804104">615 480-4104</a></div>
+        <div><span>LinkedIn</span><a href="https://www.linkedin.com/in/heather-corts-bb54928b/">linkedin.com/in/heather-corts</a></div>
       </div>
     </section>
   </div>
 
-  <div class="wrap">
-    <section id="contact">
-      <p class="eyebrow">Contact</p>
-      <h2>What decision are you facing?</h2>
-      <div class="contact-grid contact">
-        <div>
-          <div class="row">
-            <span class="label">Email</span>
-            <a class="big" href="mailto:heather@cortsresearch.com">heather@cortsresearch.com</a>
-          </div>
-          <div class="row">
-            <span class="label">Phone</span>
-            <a class="big" href="tel:+16154804104">615 480-4104</a>
-          </div>
-          <div class="row">
-            <span class="label">LinkedIn</span>
-            <a class="big" href="https://www.linkedin.com/in/heather-corts-bb54928b/" target="_blank" rel="noopener">linkedin.com/in/heather-corts</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="foot-mark">Corts <span>Research</span></div>
-    <div class="foot-rule"></div>
-    <div class="meta">
-      Corts Research, L.L.C. &middot; Nashville, Tennessee &middot; heather@cortsresearch.com &middot; 615 480-4104<br>
-      &copy; 2026 Corts Research, L.L.C.
-    </div>
-  </div>
-</footer>
+  <footer>
+    <div>Corts Research, L.L.C. · Nashville, Tennessee</div>
+    <div>© 2026 Corts Research, L.L.C.</div>
+  </footer>
+</div>
 
 </body>
 </html>
