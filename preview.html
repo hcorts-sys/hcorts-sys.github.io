@@ -5,39 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Corts Research | A Full-Service Market Research Practice</title>
 <meta name="description" content="Corts Research is an independent, full-service market research practice in Nashville, built on 25 years of custom qualitative and quantitative work, now helping companies explore where AI fits without touching the rigor of the research.">
+<meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    /* Ivory stationery — warm cotton, not white */
     --paper:#f4eeda;
     --paper-deep:#ece4cc;
     --paper-edge:#ded2b4;
-    /* Blues — the ink family */
-    --ink:#152743;          /* deep navy, primary text */
+    --ink:#152743;
     --ink-soft:#2b3f5f;
-    --royal:#26497d;        /* mid royal blue accent */
-    --royal-bright:#3568a8; /* brighter accent for links/marks */
-    --slate:#5f6f88;        /* muted body slate */
-    --line:#c9bfa4;         /* hairline on paper */
-    --gold:#9c8a5f;         /* faint engraved warmth */
+    --royal:#26497d;
+    --royal-bright:#3568a8;
+    --slate:#5f6f88;
+    --line:#c9bfa4;
+    --gold:#9c8a5f;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
     font-family:"EB Garamond",Georgia,serif;
     color:var(--ink);
-    background:#f0ead9; /* the "desk" — slightly deeper than the sheet */
+    background:#f0ead9;
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
   }
-  /* The "sheet" — a thick card floating on the desk */
   .sheet{
     max-width:1180px;
     margin:26px auto;
     background-color:var(--paper);
-    /* Fine cotton stationery: mottling + laid lines + coarse & fine paper fiber */
     background-image:
       radial-gradient(circle at 18% 12%, rgba(255,252,240,.7), transparent 42%),
       radial-gradient(circle at 88% 82%, rgba(150,132,88,.20), transparent 55%),
@@ -58,13 +55,11 @@
     position:relative;
     overflow:hidden;
   }
-  /* embossed inner keyline, like the plate mark on engraved stock */
   .sheet::after{
     content:"";position:absolute;inset:14px;border:1px solid rgba(120,104,66,.14);
     border-radius:2px;pointer-events:none;
     box-shadow:0 0 0 1px rgba(255,255,255,.4) inset;
   }
-  /* deckled top edge accent */
   .sheet::before{
     content:"";position:absolute;top:0;left:0;right:0;height:4px;
     background:linear-gradient(90deg,var(--royal),var(--royal-bright) 55%,var(--gold));
@@ -72,14 +67,12 @@
   }
   .wrap{padding:0 clamp(28px,6vw,84px)}
 
-  /* ---------- NAV ---------- */
   nav{
     display:flex;align-items:center;justify-content:space-between;
     padding:26px clamp(28px,6vw,84px) 20px;
     border-bottom:1px solid var(--line);
   }
   .brand{display:flex;align-items:center;gap:12px}
-  /* engraved crest, primary mark */
   .navcrest{
     width:40px;height:40px;flex:0 0 40px;border:1.5px solid var(--royal);border-radius:3px;
     display:flex;align-items:center;justify-content:center;position:relative;
@@ -94,7 +87,6 @@
   .navlinks a:hover{color:var(--royal);border-color:var(--royal)}
   @media(max-width:760px){.navlinks{display:none}}
 
-  /* ---------- HERO ---------- */
   .hero{padding:76px 0 64px;text-align:center;position:relative}
   .eyebrow{
     font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.34em;text-transform:uppercase;
@@ -115,12 +107,9 @@
   }
   .btn-primary{background:var(--royal);color:#f7f2e5;box-shadow:0 6px 16px rgba(38,73,125,.28)}
   .btn-primary:hover{background:var(--ink)}
-  .btn-ghost{color:var(--ink);border:1px solid var(--royal)}
-  .btn-ghost:hover{background:rgba(38,73,125,.07)}
   .rule{width:52px;height:1px;background:var(--line);margin:56px auto 0;position:relative}
   .rule::after{content:"";position:absolute;top:-3px;left:50%;transform:translateX(-50%);width:7px;height:7px;border-radius:50%;background:var(--royal-bright)}
 
-  /* ---------- SECTIONS ---------- */
   section{padding:66px 0;border-top:1px solid var(--line)}
   .sec-label{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--royal);margin-bottom:18px}
   .sec-h{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(28px,3.6vw,44px);line-height:1.1;color:var(--ink);margin-bottom:18px;max-width:20ch}
@@ -128,7 +117,6 @@
   .caps-intro{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;color:var(--ink-soft);margin-top:30px}
   #expertise .sec-lead{max-width:none}
 
-  /* expertise — typeset capabilities list, not buttons */
   .caps{
     margin-top:20px;column-gap:56px;column-count:3;
     border-top:1px solid var(--line);
@@ -150,18 +138,15 @@
     border-radius:50%;background:var(--royal-bright);opacity:.7;
   }
 
-  /* pull quote */
   .quote{text-align:center;padding:70px clamp(20px,6vw,120px)}
   .quote p{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:clamp(24px,3.4vw,38px);line-height:1.28;color:var(--ink)}
   .quote em{color:var(--royal);font-style:italic}
   .quote-inset{padding:34px 0 6px;border-top:1px solid var(--line);margin-top:36px}
   .quote-inset p{font-size:clamp(22px,3vw,32px)}
 
-  /* AI Discovery — intro with figure */
   .ai-intro{display:grid;grid-template-columns:1fr 250px;gap:52px;align-items:center}
   @media(max-width:820px){.ai-intro{grid-template-columns:1fr;gap:20px}.ai-figure{max-width:230px;margin:0 auto}}
   .ai-figure svg{width:100%;height:auto;display:block}
-  /* AI Discovery — two lenses */
   .lenses{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:40px}
   @media(max-width:820px){.lenses{grid-template-columns:1fr;gap:28px}}
   .lens{background:var(--paper-deep);border:1px solid var(--paper-edge);border-radius:3px;padding:30px 30px 32px;box-shadow:0 8px 22px rgba(21,39,67,.07)}
@@ -170,7 +155,6 @@
   .lens p{font-size:16.5px;color:var(--slate);line-height:1.62}
   .closing{margin-top:52px;text-align:center;font-family:"Cormorant Garamond",serif;font-size:clamp(20px,2.6vw,27px);font-style:italic;line-height:1.34;color:var(--ink-soft);max-width:46ch;margin-left:auto;margin-right:auto}
 
-  /* who / contact */
   .who-row{display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:start;margin-top:22px}
   @media(max-width:820px){.who-row{grid-template-columns:1fr;gap:24px;justify-items:start}}
   .who-text .sec-lead{margin-top:18px}
@@ -212,7 +196,6 @@
   </nav>
 
   <div class="wrap">
-    <!-- HERO -->
     <header class="hero">
       <div class="eyebrow">Trusted <span>·</span> Experienced <span>·</span> Unbiased</div>
       <h1>A full-service market research practice.</h1>
@@ -223,7 +206,6 @@
       <div class="rule"></div>
     </header>
 
-    <!-- WHAT WE DO -->
     <section id="expertise">
       <div class="sec-label">What we do</div>
       <h2 class="sec-h">Research designed for your business.</h2>
@@ -253,7 +235,6 @@
 
   </div>
 
-  <!-- AI DISCOVERY -->
   <div class="wrap">
     <section id="ai">
       <div class="ai-intro">
@@ -264,7 +245,6 @@
         </div>
         <div class="ai-figure" aria-hidden="true">
           <svg viewBox="0 0 260 300" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <!-- rising structure, tapering tower on a foundation -->
             <circle cx="130" cy="60" r="4.5" fill="#26497d" stroke="none"/>
             <line x1="130" y1="66" x2="130" y2="86" stroke="#26497d" stroke-width="1.5"/>
             <rect x="108" y="86" width="44" height="26" stroke="#152743" stroke-width="1.5"/>
@@ -312,7 +292,6 @@
   </div>
 
   <div class="wrap">
-    <!-- WHO -->
     <section id="who">
       <div class="sec-label">Who we are</div>
       <div class="who-row">
@@ -322,12 +301,11 @@
         </div>
         <div class="who-text">
           <h2 class="sec-h">An independent practice, built on 25 years in the field.</h2>
-          <p class="sec-lead">Over 25 years, Heather Corts has designed and led custom qualitative and quantitative studies across B2B and consumer markets, from CPG to healthcare to apparel to consumer technology. This work has been with some of the world's largest brands, including AT&amp;T, Brookdale Senior Living, eBay, ExxonMobil, Facebook, Kimberly-Clark, and Mars Petcare. Independent by design, the practice brings in the right specialists for each project, from field partners to build partners, so the team scales to the work without carrying agency overhead. Corts Research is based in Nashville.</p>
+          <p class="sec-lead">Over 25 years, Heather Corts has designed and led custom qualitative and quantitative studies across B2B and consumer markets, from CPG to healthcare to apparel to consumer technology. This work has been with some of the world's largest brands across those categories. Independent by design, the practice brings in the right specialists for each project, from field partners to build partners, so the team scales to the work without carrying agency overhead. Corts Research is based in Nashville.</p>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="contact">
       <div class="sec-label">Contact</div>
       <h2 class="sec-h">What decision are you facing?</h2>
